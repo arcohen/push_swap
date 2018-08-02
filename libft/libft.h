@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcohen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 11:52:01 by arcohen           #+#    #+#             */
-/*   Updated: 2018/06/20 12:19:25 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/02 16:08:59 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 1024
+# define INT_MIN -2147483647
+# define INT_MAX 2147483647
 
 # include <string.h>
 # include <stdlib.h>
@@ -84,5 +86,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 int					get_next_line(const int fd, char **line);
+long				ft_atoi_long(const char *str);
 
 #endif
