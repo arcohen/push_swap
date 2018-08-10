@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 12:15:13 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/07 16:08:43 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/10 16:24:10 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,8 @@ void	r_rotate_both(t_stack *stack_a, t_stack *stack_b)
 
 int		perform_op(t_stack *stack_a, t_stack *stack_b, char *line)
 {
-	ft_putstr("opping\n");
 	if (ft_strcmp(line, "sa") == 0)
-	{
-		ft_putstr("cmperMatch\n");
-		//ft_putnbr(stack_a->size);
 		swap(stack_a);
-	}
 	else if (ft_strcmp(line, "sb") == 0)
 		swap(stack_b);
 	else if (ft_strcmp(line, "ss") == 0)
@@ -64,21 +59,37 @@ int		perform_op(t_stack *stack_a, t_stack *stack_b, char *line)
 	return (1);
 }
 
+void	print_tab(t_stack *stk)
+{
+	int i;
+
+	i = 0;
+	ft_putstr("size:\n");
+	ft_putnbr(stk->size);
+	ft_putstr("\narray:\n");
+	while (i < stk->size)
+	{
+		ft_putnbr(stk->tab[i]);
+		ft_putchar('\n');
+		i++;
+	}
+	ft_putstr("-------\n");
+}
+
 int		instructions(t_stack *stack_a, t_stack *stack_b)
 {
 	char *line;
 
-	ft_putstr("beforeGNL\n");
 	while (get_next_line(0, &line) == 1)
 	{
-		ft_putstr("getNLing\n");
 		if (perform_op(stack_a, stack_b, line) == 0)
 		{
 			free(line);
 			return (0);
 		}
+		print_tab(stack_a);
+		print_tab(stack_b);
 		free(line);
 	}
-	ft_putstr("exited\n");
 	return (1);
 }

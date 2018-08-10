@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 11:30:00 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/07 16:04:39 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/08 13:38:12 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	shift(t_stack *stack_x, int up)
 
 void	swap(t_stack *stack_x)
 {
-	ft_putnbr(123);
-	ft_putnbr(stack_x->size);
-	ft_putnbr(456);
 	if (stack_x->size > 1)
 	{
 		int temp;
@@ -60,7 +57,7 @@ void	push(t_stack *stack_x, t_stack *stack_y)
 	}
 }
 
-void	rotate(t_stack *stack_x)
+void	r_rotate(t_stack *stack_x)
 {
 	int temp;
 
@@ -72,7 +69,7 @@ void	rotate(t_stack *stack_x)
 	}
 }
 
-void	r_rotate(t_stack *stack_x)
+void	rotate(t_stack *stack_x)
 {
 	int temp;
 

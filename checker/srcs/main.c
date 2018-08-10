@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 14:46:54 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/07 18:33:35 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/08 13:45:04 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,24 @@ int		check_if_sorted(t_stack *stack_a, t_stack *stack_b)
 
 int		main(int ac, char **av)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
+	stack_a = (t_stack *)malloc(sizeof(t_stack));
+	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (ac < 2)
 		return (0);
-	if (!check_digits(av) || !make_stack(&stack_a, &stack_b, av))
+	if (!check_digits(av) || !make_stack(stack_a, stack_b, av))
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	//ft_putnbr(stack_a.tab[0]);
-	ft_putstr("size_aft_error_chk:\n");
-	//ft_putnbr(stack_a.size);
-	if (!instructions(&stack_a, &stack_b))
+	if (!instructions(stack_a, stack_b))
 		ft_putstr_fd("Error\n", 2);
-	if (check_if_sorted(&stack_a, &stack_b))
+	else if (check_if_sorted(stack_a, stack_b))
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
-	free_all(&stack_a, &stack_b);
+	free_all(stack_a, stack_b);
 	return (0);
 }

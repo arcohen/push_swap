@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:09:49 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/07 18:14:36 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/10 16:12:18 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ int		check_digits(char **argv)
 				return (0);
 			if ((argv[i][j] == '-' || argv[i][j] == '+') && !ft_isdigit(argv[i][j + 1]))
 				return (0);
-			else if (argv[i][j] == ' ' && !ft_isdigit(argv[i][j + 1]))
+			else if (argv[i][j] == ' ' && (!ft_isdigit(argv[i][j + 1]) && 
+				argv[i][j + 1] != '-' && argv[i][j + 1] != '+'))
 				return (0);
-			else if (!ft_isdigit(argv[i][j]))
+			else if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' 
+				&& argv[i][j] != '-' && argv[i][j] != '+')
 				return (0);
 			j++;
 		}
