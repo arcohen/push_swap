@@ -6,11 +6,11 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 16:33:37 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:30:06 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/13 16:36:56 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 int		count_nbs(char **av)
 {
@@ -68,6 +68,8 @@ void	create_tab(t_stack *stack_a, t_stack *stack_b, char **av)
 
 int		make_stack(t_stack *stack_a, t_stack *stack_b, char **av)
 {
+	stack_a->stk = 'a';
+	stack_b->stk = 'b';
 	create_tab(stack_a, stack_b, av);
 	fill_stack(stack_a->tab, av);
 	if (check_dup(stack_a->tab, stack_a->size) == 0)

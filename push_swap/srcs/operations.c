@@ -6,11 +6,11 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 11:30:00 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:30:10 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/13 17:22:52 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 void	shift(t_stack *stack_x, int up)
 {
@@ -42,6 +42,10 @@ void	swap(t_stack *stack_x)
 		temp = stack_x->tab[0];
 		stack_x->tab[0] = stack_x->tab[1];
 		stack_x->tab[1] = temp;
+		if (stack_x->stk == 'a')
+			ft_putstr("sa\n");
+		else
+			ft_putstr("sb\n");
 	}
 }
 
@@ -54,6 +58,10 @@ void	push(t_stack *stack_x, t_stack *stack_y)
 		stack_x->tab[0] = stack_y->tab[0];
 		shift(stack_y, 0);
 		stack_y->size--;	
+		if (stack_x->stk == 'a')
+			ft_putstr("pa\n");
+		else
+			ft_putstr("pb\n");
 	}
 }
 
@@ -66,6 +74,10 @@ void	r_rotate(t_stack *stack_x)
 		temp = stack_x->tab[stack_x->size - 1];
 		shift(stack_x, 1);
 		stack_x->tab[0] = temp;
+		if (stack_x->stk == 'a')
+			ft_putstr("rra\n");
+		else
+			ft_putstr("rrb\n");
 	}
 }
 
@@ -78,5 +90,9 @@ void	rotate(t_stack *stack_x)
 		temp = stack_x->tab[0];
 		shift(stack_x, 0);
 		stack_x->tab[stack_x->size - 1] = temp;
+		if (stack_x->stk == 'a')
+			ft_putstr("ra\n");
+		else
+			ft_putstr("rb\n");
 	}
 }

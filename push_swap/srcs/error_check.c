@@ -6,11 +6,11 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:09:49 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:29:47 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/13 12:18:06 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 int		check_digits(char **argv)
 {
