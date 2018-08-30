@@ -6,40 +6,11 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 12:28:57 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/27 15:19:30 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/08/30 16:47:01 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/*int		minit(t_stack *a, int *srted, int k)
-{
-	int i;
-	int	ret;
-
-	i = 0;
-	ret = a->tab[0];
-	while (i < a->size)
-	{
-		if (a->tab[i] < ret && (k == -1 || a->tab[i] > srted[k]))
-			ret = a->tab[i];
-		i++;
-	}
-	return (ret);
-}
-
-int		*sort_it(t_stack *a, int *sorted)
-{
-	int i;
-
-	i = 0;
-	sorted = (int *)malloc(sizeof(int) * a->size);
-	while (i < a->size)
-	{
-		sorted[i] = minit(a, sorted, i - 1);
-		i++;
-	}
-}*/
 
 void	free_all(t_stack *stack_a, t_stack *stack_b)
 {
