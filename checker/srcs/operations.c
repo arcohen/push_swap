@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 11:30:00 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:30:10 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/09/04 20:54:27 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	shift(t_stack *stack_x, int up)
 
 void	swap(t_stack *stack_x)
 {
+	int temp;
+
 	if (stack_x->size > 1)
 	{
-		int temp;
-
 		temp = stack_x->tab[0];
 		stack_x->tab[0] = stack_x->tab[1];
 		stack_x->tab[1] = temp;
@@ -53,7 +53,7 @@ void	push(t_stack *stack_x, t_stack *stack_y)
 		shift(stack_x, 1);
 		stack_x->tab[0] = stack_y->tab[0];
 		shift(stack_y, 0);
-		stack_y->size--;	
+		stack_y->size--;
 	}
 }
 

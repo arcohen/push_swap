@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:09:49 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:18:06 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/09/04 20:45:11 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,27 @@ int		check_digits(char **argv)
 {
 	int i;
 	int j;
-	
-	i = 1;
-	while (argv[i])
+
+	i = 0;
+	while (argv[++i])
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_atoi_long(&argv[i][j]) > INT_MAX || ft_atoi_long(&argv[i][j]) < INT_MIN)
+			if (ft_atoi_long(&argv[i][j]) > INT_MAX
+				|| ft_atoi_long(&argv[i][j]) < INT_MIN)
 				return (0);
-			if ((argv[i][j] == '-' || argv[i][j] == '+') && !ft_isdigit(argv[i][j + 1]))
+			if ((argv[i][j] == '-' || argv[i][j] == '+')
+				&& !ft_isdigit(argv[i][j + 1]))
 				return (0);
-			else if (argv[i][j] == ' ' && (!ft_isdigit(argv[i][j + 1]) && 
+			else if (argv[i][j] == ' ' && (!ft_isdigit(argv[i][j + 1]) &&
 				argv[i][j + 1] != '-' && argv[i][j + 1] != '+'))
 				return (0);
-			else if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' 
+			else if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' '
 				&& argv[i][j] != '-' && argv[i][j] != '+')
 				return (0);
 			j++;
 		}
-		i++;
 	}
 	return (1);
 }

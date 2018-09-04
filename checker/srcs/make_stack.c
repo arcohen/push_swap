@@ -6,7 +6,7 @@
 /*   By: arcohen <arcohen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 16:33:37 by arcohen           #+#    #+#             */
-/*   Updated: 2018/08/13 12:30:06 by arcohen          ###   ########.fr       */
+/*   Updated: 2018/09/04 20:53:32 by arcohen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		count_nbs(char **av)
 
 	ret = 0;
 	i = 1;
-	while(av[i])
+	while (av[i])
 	{
 		j = 0;
 		while (av[i][j])
@@ -42,7 +42,7 @@ void	fill_stack(int *tab, char **av)
 
 	k = 0;
 	i = 1;
-	while(av[i])
+	while (av[i])
 	{
 		j = 0;
 		while (av[i][j])
